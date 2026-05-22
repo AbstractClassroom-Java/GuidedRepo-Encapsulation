@@ -1,10 +1,10 @@
 package io.github.nathanjrussell;
 
-/**
- * Immutable data holder used to demonstrate basic encapsulation.
- * <p>
- * This intentionally keeps the same "flat" structure as the original method parameters so the
- * evolution from "many params" -> "encapsulated object" is easy to see.
+/*
+    * This code defines an Employee class with a large number of fields to encapsulate personal information and emergency contacts.
+    * The class has a constructor that takes all these fields as parameters, and getter methods for each field.
+    *
+    * Mediocre code - Developer is still employed but likely not promoted.
  */
 public class Employee {
 

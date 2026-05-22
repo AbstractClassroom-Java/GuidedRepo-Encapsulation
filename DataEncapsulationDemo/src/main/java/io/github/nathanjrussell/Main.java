@@ -5,7 +5,7 @@ package io.github.nathanjrussell;
     * The method takes a large number of parameters to capture all relevant details about the employee and their emergency contacts.
     * The main method demonstrates how to call this method with sample data.
     *
-    * ABSOLUTELY AWFUL CODE - Fire the developer who wrote this!
+    * Mediocre code - Developer is still employed but likely not promoted.
 */
 public class Main {
 
