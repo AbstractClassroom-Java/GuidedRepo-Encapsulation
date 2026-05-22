@@ -16,12 +16,17 @@ public record ContactInfo(
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        return toString(0);
+    }
 
-        sb.append("Name: ").append(firstName).append(" ").append(lastName).append("\n");
-        sb.append("Phone Number: ").append(phoneNumber).append("\n");
-        sb.append("Email: ").append(email).append("\n");
-        sb.append("Address: ")
+    public String toString(int tabDepth) {
+        StringBuilder sb = new StringBuilder();
+        String indent = "\t".repeat(Math.max(0, tabDepth));
+
+        sb.append(indent).append("Name: ").append(firstName).append(" ").append(lastName).append("\n");
+        sb.append(indent).append("Phone Number: ").append(phoneNumber).append("\n");
+        sb.append(indent).append("Email: ").append(email).append("\n");
+        sb.append(indent).append("Address: ")
                 .append(streetAddress)
                 .append(", ")
                 .append(city)

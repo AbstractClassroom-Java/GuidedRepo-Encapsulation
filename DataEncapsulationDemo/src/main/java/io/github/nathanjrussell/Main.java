@@ -1,13 +1,9 @@
 package io.github.nathanjrussell;
 
-/*
-*/
 public class Main {
 
     /*
-     Notice the printing of the employee details have been offloaded
-     to the record class itself.
-     Overloaded the toString method.
+    Formatting of contact information is now formatted much better.
      */
 
     public static void main(String[] args) {

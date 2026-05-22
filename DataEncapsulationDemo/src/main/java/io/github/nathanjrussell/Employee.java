@@ -1,12 +1,11 @@
 package io.github.nathanjrussell;
 
 /*
-    * Notice Employee class no longer provides the string for
-    * contact details.  The ContactInfo record class is
-    * responsible for that.
+    * Notice Employee data implements tab indents for
+    * better display formatting.
     *
-    * Employee class calls the toString method of the ContactInfo
-    * record class to get the formatted contact details when printing
+    * Overloaded the toString method to allow for tab depth control
+    * in ContactInfo
  */
 
 public record Employee(
@@ -25,19 +24,21 @@ public record Employee(
         StringBuilder sb = new StringBuilder();
 
         sb.append("Employee Details:\n");
-        sb.append(personalInfo);
 
-        sb.append("Employee ID: ").append(employeeId).append("\n");
-        sb.append("Department: ").append(department).append("\n");
-        sb.append("Title: ").append(title).append("\n");
+        sb.append("\tEmployee ID: ").append(employeeId).append("\n");
+        sb.append("\tDepartment: ").append(department).append("\n");
+        sb.append("\tTitle: ").append(title).append("\n");
 
-        sb.append("Emergency Contact 1:\n");
-        sb.append(emergencyContact1);
-        sb.append("Relationship: ").append(emergencyContact1Relationship).append("\n");
+        sb.append("\tContact Details:\n");
+        sb.append(personalInfo.toString(2));
 
-        sb.append("Emergency Contact 2:\n");
-        sb.append(emergencyContact2);
-        sb.append("Relationship: ").append(emergencyContact2Relationship).append("\n");
+        sb.append("\tEmergency Contact 1:\n");
+        sb.append(emergencyContact1.toString(2));
+        sb.append("\t\tRelationship: ").append(emergencyContact1Relationship).append("\n");
+
+        sb.append("\tEmergency Contact 2:\n");
+        sb.append(emergencyContact2.toString(2));
+        sb.append("\t\tRelationship: ").append(emergencyContact2Relationship).append("\n");
 
         return sb.toString();
     }
