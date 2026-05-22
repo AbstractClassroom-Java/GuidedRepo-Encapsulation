@@ -1,5 +1,7 @@
 # Data Encapsulation
 
+This repo is intended to be a guided code demonstration (using tags) that walks students from a poor sequential implementation to a more professional and object oriented framework.
+
 Data encapsulation is a fundamental principle of object-oriented programming (OOP) that involves bundling data and methods that operate on that data within a single unit, typically a class. It allows for the hiding of internal details and provides a clear interface for interacting with the data.  
 
 ## Benefits of Data Encapsulation
