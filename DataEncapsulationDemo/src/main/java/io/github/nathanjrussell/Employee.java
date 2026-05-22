@@ -11,6 +11,30 @@ public record Employee(
         String emergencyContact2Relationship
 ) {
 
+    @Override
+    public String toString() {
+        return "Employee Details:\n" +
+                "Name: " + personalInfo.firstName() + " " + personalInfo.lastName() + "\n" +
+                "Employee ID: " + employeeId + "\n" +
+                "Department: " + department + "\n" +
+                "Title: " + title + "\n" +
+                "Email: " + personalInfo.email() + "\n" +
+                "Phone Number: " + personalInfo.phoneNumber() + "\n" +
+                "Address: " + personalInfo.streetAddress() + ", " + personalInfo.city() + ", " + personalInfo.state() + " " + personalInfo.zipCode() + "\n" +
+                "Emergency Contact 1:\n" +
+                "Name: " + emergencyContact1.firstName() + " " + emergencyContact1.lastName() + "\n" +
+                "Phone Number: " + emergencyContact1.phoneNumber() + "\n" +
+                "Email: " + emergencyContact1.email() + "\n" +
+                "Address: " + emergencyContact1.streetAddress() + ", " + emergencyContact1.city() + ", " + emergencyContact1.state() + " " + emergencyContact1.zipCode() + "\n" +
+                "Relationship: " + emergencyContact1Relationship + "\n" +
+                "Emergency Contact 2:\n" +
+                "Name: " + emergencyContact2.firstName() + " " + emergencyContact2.lastName() + "\n" +
+                "Phone Number: " + emergencyContact2.phoneNumber() + "\n" +
+                "Email: " + emergencyContact2.email() + "\n" +
+                "Address: " + emergencyContact2.streetAddress() + ", " + emergencyContact2.city() + ", " + emergencyContact2.state() + " " + emergencyContact2.zipCode() + "\n" +
+                "Relationship: " + emergencyContact2Relationship + "\n";
+    }
+
     public static Builder builder() {
         return new Builder();
     }
