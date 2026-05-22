@@ -335,7 +335,7 @@ System.out.println(employee);
 This will print out the string representation of the `employee` object as defined in the overridden `toString()` method.
 
 
-## Repository Branches
+## Repository Tags (Versions)
 
 To help you understand the concepts of data encapsulation, this repository contains multiple version tags.  The `main` branch will have the most up-to-date version of the code.  However, the versions have been tagged in a way that allows you to see the progression of code from a very clumsy and non-encapsulated approach to a more structured and professional approach using data encapsulation, Java record classes, and builder patterns.  
 
