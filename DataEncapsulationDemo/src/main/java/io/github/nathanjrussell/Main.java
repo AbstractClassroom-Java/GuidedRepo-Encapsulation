@@ -1,7 +1,8 @@
 package io.github.nathanjrussell;
 
 /*
-    * Slightly more modern code - Developer is allowed to each lunch with the team but not allowed to speak in meetings.
+    * Still Far From Great
+    * Developer is allowed to talk on Mondays and Fridays.
 */
 public class Main {
 
@@ -37,38 +38,45 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        /*
+            - The parameters can be set in any order using builder pattern
+              methods that describe the parameter being set.
 
-        Employee employee = new Employee(
-                "John",
-                "Doe",
-                "E12345",
-                "Engineering",
-                "Software Engineer",
-                "empemail@fake.com",
-                "555-123-4567",
-                "123 Main St",
-                "Anytown",
-                "CA",
-                "12345",
-                "Jane",
-                "Doe",
-                "555-987-6543",
-                "contact1@fake.com",
-                "456 Elm St",
-                "Othertown",
-                "CA",
-                "54321",
-                "Spouse",
-                "Jim",
-                "Smith",
-                "555-555-5555",
-                "contact2@fake.com",
-                "789 Oak St",
-                "Sometown",
-                "CA",
-                "67890",
-                "Friend"
-        );
+            - Notice the original constructor is still available
+            - This builder pattern reduces the chance of accidentally
+              swapping parameters of the same type but different meaning.
+         */
+        Employee employee = Employee.builder()
+                .firstName("John")
+                .lastName("Doe")
+                .employeeId("E12345")
+                .department("Engineering")
+                .title("Software Engineer")
+                .email("empemail@fake.com")
+                .phoneNumber("555-123-4567")
+                .streetAddress("123 Main St")
+                .city("Anytown")
+                .state("CA")
+                .zipCode("12345")
+                .emergencyContact1FirstName("Jane")
+                .emergencyContact1LastName("Doe")
+                .emergencyContact1PhoneNumber("555-987-6543")
+                .emergencyContact1Email("contact1@fake.com")
+                .emergencyContact1StreetAddress("456 Elm St")
+                .emergencyContact1City("Othertown")
+                .emergencyContact1State("CA")
+                .emergencyContact1ZipCode("54321")
+                .emergencyContact1Relationship("Spouse")
+                .emergencyContact2FirstName("Jim")
+                .emergencyContact2LastName("Smith")
+                .emergencyContact2PhoneNumber("555-555-5555")
+                .emergencyContact2Email("contact2@fake.com")
+                .emergencyContact2StreetAddress("789 Oak St")
+                .emergencyContact2City("Sometown")
+                .emergencyContact2State("CA")
+                .emergencyContact2ZipCode("67890")
+                .emergencyContact2Relationship("Friend")
+                .build();
 
         displayEmployeeDetails(employee);
 
