@@ -14,6 +14,26 @@ public record ContactInfo(
         String zipCode
 ) {
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Name: ").append(firstName).append(" ").append(lastName).append("\n");
+        sb.append("Phone Number: ").append(phoneNumber).append("\n");
+        sb.append("Email: ").append(email).append("\n");
+        sb.append("Address: ")
+                .append(streetAddress)
+                .append(", ")
+                .append(city)
+                .append(", ")
+                .append(state)
+                .append(" ")
+                .append(zipCode)
+                .append("\n");
+
+        return sb.toString();
+    }
+
     public static Builder builder() {
         return new Builder();
     }

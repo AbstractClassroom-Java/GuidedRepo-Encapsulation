@@ -1,5 +1,14 @@
 package io.github.nathanjrussell;
 
+/*
+    * Notice Employee class no longer provides the string for
+    * contact details.  The ContactInfo record class is
+    * responsible for that.
+    *
+    * Employee class calls the toString method of the ContactInfo
+    * record class to get the formatted contact details when printing
+ */
+
 public record Employee(
         ContactInfo personalInfo,
         String employeeId,
@@ -16,50 +25,18 @@ public record Employee(
         StringBuilder sb = new StringBuilder();
 
         sb.append("Employee Details:\n");
-        sb.append("Name: ").append(personalInfo.firstName()).append(" ").append(personalInfo.lastName()).append("\n");
+        sb.append(personalInfo);
+
         sb.append("Employee ID: ").append(employeeId).append("\n");
         sb.append("Department: ").append(department).append("\n");
         sb.append("Title: ").append(title).append("\n");
-        sb.append("Email: ").append(personalInfo.email()).append("\n");
-        sb.append("Phone Number: ").append(personalInfo.phoneNumber()).append("\n");
-        sb.append("Address: ")
-                .append(personalInfo.streetAddress())
-                .append(", ")
-                .append(personalInfo.city())
-                .append(", ")
-                .append(personalInfo.state())
-                .append(" ")
-                .append(personalInfo.zipCode())
-                .append("\n");
 
         sb.append("Emergency Contact 1:\n");
-        sb.append("Name: ").append(emergencyContact1.firstName()).append(" ").append(emergencyContact1.lastName()).append("\n");
-        sb.append("Phone Number: ").append(emergencyContact1.phoneNumber()).append("\n");
-        sb.append("Email: ").append(emergencyContact1.email()).append("\n");
-        sb.append("Address: ")
-                .append(emergencyContact1.streetAddress())
-                .append(", ")
-                .append(emergencyContact1.city())
-                .append(", ")
-                .append(emergencyContact1.state())
-                .append(" ")
-                .append(emergencyContact1.zipCode())
-                .append("\n");
+        sb.append(emergencyContact1);
         sb.append("Relationship: ").append(emergencyContact1Relationship).append("\n");
 
         sb.append("Emergency Contact 2:\n");
-        sb.append("Name: ").append(emergencyContact2.firstName()).append(" ").append(emergencyContact2.lastName()).append("\n");
-        sb.append("Phone Number: ").append(emergencyContact2.phoneNumber()).append("\n");
-        sb.append("Email: ").append(emergencyContact2.email()).append("\n");
-        sb.append("Address: ")
-                .append(emergencyContact2.streetAddress())
-                .append(", ")
-                .append(emergencyContact2.city())
-                .append(", ")
-                .append(emergencyContact2.state())
-                .append(" ")
-                .append(emergencyContact2.zipCode())
-                .append("\n");
+        sb.append(emergencyContact2);
         sb.append("Relationship: ").append(emergencyContact2Relationship).append("\n");
 
         return sb.toString();
