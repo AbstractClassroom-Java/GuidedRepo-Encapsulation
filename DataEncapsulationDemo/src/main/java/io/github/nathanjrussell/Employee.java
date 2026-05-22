@@ -13,26 +13,56 @@ public record Employee(
 
     @Override
     public String toString() {
-        return "Employee Details:\n" +
-                "Name: " + personalInfo.firstName() + " " + personalInfo.lastName() + "\n" +
-                "Employee ID: " + employeeId + "\n" +
-                "Department: " + department + "\n" +
-                "Title: " + title + "\n" +
-                "Email: " + personalInfo.email() + "\n" +
-                "Phone Number: " + personalInfo.phoneNumber() + "\n" +
-                "Address: " + personalInfo.streetAddress() + ", " + personalInfo.city() + ", " + personalInfo.state() + " " + personalInfo.zipCode() + "\n" +
-                "Emergency Contact 1:\n" +
-                "Name: " + emergencyContact1.firstName() + " " + emergencyContact1.lastName() + "\n" +
-                "Phone Number: " + emergencyContact1.phoneNumber() + "\n" +
-                "Email: " + emergencyContact1.email() + "\n" +
-                "Address: " + emergencyContact1.streetAddress() + ", " + emergencyContact1.city() + ", " + emergencyContact1.state() + " " + emergencyContact1.zipCode() + "\n" +
-                "Relationship: " + emergencyContact1Relationship + "\n" +
-                "Emergency Contact 2:\n" +
-                "Name: " + emergencyContact2.firstName() + " " + emergencyContact2.lastName() + "\n" +
-                "Phone Number: " + emergencyContact2.phoneNumber() + "\n" +
-                "Email: " + emergencyContact2.email() + "\n" +
-                "Address: " + emergencyContact2.streetAddress() + ", " + emergencyContact2.city() + ", " + emergencyContact2.state() + " " + emergencyContact2.zipCode() + "\n" +
-                "Relationship: " + emergencyContact2Relationship + "\n";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Employee Details:\n");
+        sb.append("Name: ").append(personalInfo.firstName()).append(" ").append(personalInfo.lastName()).append("\n");
+        sb.append("Employee ID: ").append(employeeId).append("\n");
+        sb.append("Department: ").append(department).append("\n");
+        sb.append("Title: ").append(title).append("\n");
+        sb.append("Email: ").append(personalInfo.email()).append("\n");
+        sb.append("Phone Number: ").append(personalInfo.phoneNumber()).append("\n");
+        sb.append("Address: ")
+                .append(personalInfo.streetAddress())
+                .append(", ")
+                .append(personalInfo.city())
+                .append(", ")
+                .append(personalInfo.state())
+                .append(" ")
+                .append(personalInfo.zipCode())
+                .append("\n");
+
+        sb.append("Emergency Contact 1:\n");
+        sb.append("Name: ").append(emergencyContact1.firstName()).append(" ").append(emergencyContact1.lastName()).append("\n");
+        sb.append("Phone Number: ").append(emergencyContact1.phoneNumber()).append("\n");
+        sb.append("Email: ").append(emergencyContact1.email()).append("\n");
+        sb.append("Address: ")
+                .append(emergencyContact1.streetAddress())
+                .append(", ")
+                .append(emergencyContact1.city())
+                .append(", ")
+                .append(emergencyContact1.state())
+                .append(" ")
+                .append(emergencyContact1.zipCode())
+                .append("\n");
+        sb.append("Relationship: ").append(emergencyContact1Relationship).append("\n");
+
+        sb.append("Emergency Contact 2:\n");
+        sb.append("Name: ").append(emergencyContact2.firstName()).append(" ").append(emergencyContact2.lastName()).append("\n");
+        sb.append("Phone Number: ").append(emergencyContact2.phoneNumber()).append("\n");
+        sb.append("Email: ").append(emergencyContact2.email()).append("\n");
+        sb.append("Address: ")
+                .append(emergencyContact2.streetAddress())
+                .append(", ")
+                .append(emergencyContact2.city())
+                .append(", ")
+                .append(emergencyContact2.state())
+                .append(" ")
+                .append(emergencyContact2.zipCode())
+                .append("\n");
+        sb.append("Relationship: ").append(emergencyContact2Relationship).append("\n");
+
+        return sb.toString();
     }
 
     public static Builder builder() {

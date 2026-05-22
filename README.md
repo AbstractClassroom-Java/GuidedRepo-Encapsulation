@@ -353,7 +353,10 @@ Below is a list of the different versions and what they contain:
 - `v0.4.0`: Encapsulated approach using a builder pattern for better readability and maintainability when dealing with complex objects.
 - `v0.5.0`: Using nested record classes to further organize the employee and emergency contact details.
 - `v0.6.0`: Overriding `toString()` method to the `Employee` class for better debugging and logging.
-- `v0.7.0`: Implements an overloaded `toString()` method that allows for indentation and better readability when printing the employee details.
+- `v0.7.0`: Updated `toString()` to use `StringBuilder` for more efficient string concatenation and better readability.
+- `v0.8.0`: Added `toString()` method to the ContactInfo record class to chain the string presentation.
+
+- `v0.9.0`: Implements an overloaded `toString()` method that allows for indentation and better readability when printing the employee details.
 
 # Conclusion
 

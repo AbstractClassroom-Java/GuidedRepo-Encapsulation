@@ -1,7 +1,7 @@
 package io.github.nathanjrussell;
 
 /*
-    * Getting there
+    * Getting there quicker
 */
 public class Main {
 
