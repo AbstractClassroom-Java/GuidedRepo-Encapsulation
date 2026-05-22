@@ -1,43 +1,84 @@
 package io.github.nathanjrussell;
 
 /*
-    * Still Far From Great
-    * Developer is allowed to talk on Mondays and Fridays.
+    * Starting to look nicer, right?
+    * The main driver file is handling too much of the details.
+    * Developer is starting to be liked among the team.
 */
 public class Main {
 
     public static void displayEmployeeDetails(Employee employee) {
         System.out.println("Employee Details:");
-        System.out.println("Name: " + employee.firstName() + " " + employee.lastName());
+
+        ContactInfo personalInfo = employee.personalInfo();
+        System.out.println("Name: " + personalInfo.firstName() + " " + personalInfo.lastName());
+
         System.out.println("Employee ID: " + employee.employeeId());
         System.out.println("Department: " + employee.department());
         System.out.println("Title: " + employee.title());
-        System.out.println("Email: " + employee.email());
-        System.out.println("Phone Number: " + employee.phoneNumber());
+        System.out.println("Email: " + personalInfo.email());
+        System.out.println("Phone Number: " + personalInfo.phoneNumber());
         System.out.println(
-                "Address: " + employee.streetAddress() + ", " + employee.city() + ", " + employee.state() + " " + employee.zipCode()
+                "Address: " + personalInfo.streetAddress() + ", " + personalInfo.city() + ", " + personalInfo.state() + " " + personalInfo.zipCode()
         );
 
         System.out.println("Emergency Contact 1:");
-        System.out.println("Name: " + employee.emergencyContact1FirstName() + " " + employee.emergencyContact1LastName());
-        System.out.println("Phone Number: " + employee.emergencyContact1PhoneNumber());
-        System.out.println("Email: " + employee.emergencyContact1Email());
+        ContactInfo emergencyContact1 = employee.emergencyContact1();
+        System.out.println("Name: " + emergencyContact1.firstName() + " " + emergencyContact1.lastName());
+        System.out.println("Phone Number: " + emergencyContact1.phoneNumber());
+        System.out.println("Email: " + emergencyContact1.email());
         System.out.println(
-                "Address: " + employee.emergencyContact1StreetAddress() + ", " + employee.emergencyContact1City() + ", " + employee.emergencyContact1State() + " " + employee.emergencyContact1ZipCode()
+                "Address: " + emergencyContact1.streetAddress() + ", " + emergencyContact1.city() + ", " + emergencyContact1.state() + " " + emergencyContact1.zipCode()
         );
         System.out.println("Relationship: " + employee.emergencyContact1Relationship());
 
         System.out.println("Emergency Contact 2:");
-        System.out.println("Name: " + employee.emergencyContact2FirstName() + " " + employee.emergencyContact2LastName());
-        System.out.println("Phone Number: " + employee.emergencyContact2PhoneNumber());
-        System.out.println("Email: " + employee.emergencyContact2Email());
+        ContactInfo emergencyContact2 = employee.emergencyContact2();
+        System.out.println("Name: " + emergencyContact2.firstName() + " " + emergencyContact2.lastName());
+        System.out.println("Phone Number: " + emergencyContact2.phoneNumber());
+        System.out.println("Email: " + emergencyContact2.email());
         System.out.println(
-                "Address: " + employee.emergencyContact2StreetAddress() + ", " + employee.emergencyContact2City() + ", " + employee.emergencyContact2State() + " " + employee.emergencyContact2ZipCode()
+                "Address: " + emergencyContact2.streetAddress() + ", " + emergencyContact2.city() + ", " + emergencyContact2.state() + " " + emergencyContact2.zipCode()
         );
         System.out.println("Relationship: " + employee.emergencyContact2Relationship());
     }
 
     public static void main(String[] args) {
+        // Create ContactInfo instances for contact info
+        // Reuse the ContactInfo class to encapsulate details
+        ContactInfo personalInfo = ContactInfo.builder()
+                .firstName("John")
+                .lastName("Doe")
+                .email("empemail@fake.com")
+                .phoneNumber("555-123-4567")
+                .streetAddress("123 Main St")
+                .city("Anytown")
+                .state("CA")
+                .zipCode("12345")
+                .build();
+
+        ContactInfo emergencyContact1 = ContactInfo.builder()
+                .firstName("Jane")
+                .lastName("Doe")
+                .email("contact1@fake.com")
+                .phoneNumber("555-987-6543")
+                .streetAddress("456 Elm St")
+                .city("Othertown")
+                .state("CA")
+                .zipCode("54321")
+                .build();
+
+        ContactInfo emergencyContact2 = ContactInfo.builder()
+                .firstName("Jim")
+                .lastName("Smith")
+                .email("contact2@fake.com")
+                .phoneNumber("555-555-5555")
+                .streetAddress("789 Oak St")
+                .city("Sometown")
+                .state("CA")
+                .zipCode("67890")
+                .build();
+
         /*
             - The parameters can be set in any order using builder pattern
               methods that describe the parameter being set.
@@ -47,34 +88,13 @@ public class Main {
               swapping parameters of the same type but different meaning.
          */
         Employee employee = Employee.builder()
-                .firstName("John")
-                .lastName("Doe")
+                .personalInfo(personalInfo)
                 .employeeId("E12345")
                 .department("Engineering")
                 .title("Software Engineer")
-                .email("empemail@fake.com")
-                .phoneNumber("555-123-4567")
-                .streetAddress("123 Main St")
-                .city("Anytown")
-                .state("CA")
-                .zipCode("12345")
-                .emergencyContact1FirstName("Jane")
-                .emergencyContact1LastName("Doe")
-                .emergencyContact1PhoneNumber("555-987-6543")
-                .emergencyContact1Email("contact1@fake.com")
-                .emergencyContact1StreetAddress("456 Elm St")
-                .emergencyContact1City("Othertown")
-                .emergencyContact1State("CA")
-                .emergencyContact1ZipCode("54321")
+                .emergencyContact1(emergencyContact1)
                 .emergencyContact1Relationship("Spouse")
-                .emergencyContact2FirstName("Jim")
-                .emergencyContact2LastName("Smith")
-                .emergencyContact2PhoneNumber("555-555-5555")
-                .emergencyContact2Email("contact2@fake.com")
-                .emergencyContact2StreetAddress("789 Oak St")
-                .emergencyContact2City("Sometown")
-                .emergencyContact2State("CA")
-                .emergencyContact2ZipCode("67890")
+                .emergencyContact2(emergencyContact2)
                 .emergencyContact2Relationship("Friend")
                 .build();
 
