@@ -1,43 +1,39 @@
 package io.github.nathanjrussell;
 
 /*
-    * This code defines a method to display employee details, including personal information and emergency contacts.
-    * The method takes a large number of parameters to capture all relevant details about the employee and their emergency contacts.
-    * The main method demonstrates how to call this method with sample data.
-    *
-    * Mediocre code - Developer is still employed but likely not promoted.
+    * Slightly more modern code - Developer is allowed to each lunch with the team but not allowed to speak in meetings.
 */
 public class Main {
 
     public static void displayEmployeeDetails(Employee employee) {
         System.out.println("Employee Details:");
-        System.out.println("Name: " + employee.getFirstName() + " " + employee.getLastName());
-        System.out.println("Employee ID: " + employee.getEmployeeId());
-        System.out.println("Department: " + employee.getDepartment());
-        System.out.println("Title: " + employee.getTitle());
-        System.out.println("Email: " + employee.getEmail());
-        System.out.println("Phone Number: " + employee.getPhoneNumber());
+        System.out.println("Name: " + employee.firstName() + " " + employee.lastName());
+        System.out.println("Employee ID: " + employee.employeeId());
+        System.out.println("Department: " + employee.department());
+        System.out.println("Title: " + employee.title());
+        System.out.println("Email: " + employee.email());
+        System.out.println("Phone Number: " + employee.phoneNumber());
         System.out.println(
-                "Address: " + employee.getStreetAddress() + ", " + employee.getCity() + ", " + employee.getState() + " " + employee.getZipCode()
+                "Address: " + employee.streetAddress() + ", " + employee.city() + ", " + employee.state() + " " + employee.zipCode()
         );
 
         System.out.println("Emergency Contact 1:");
-        System.out.println("Name: " + employee.getEmergencyContact1FirstName() + " " + employee.getEmergencyContact1LastName());
-        System.out.println("Phone Number: " + employee.getEmergencyContact1PhoneNumber());
-        System.out.println("Email: " + employee.getEmergencyContact1Email());
+        System.out.println("Name: " + employee.emergencyContact1FirstName() + " " + employee.emergencyContact1LastName());
+        System.out.println("Phone Number: " + employee.emergencyContact1PhoneNumber());
+        System.out.println("Email: " + employee.emergencyContact1Email());
         System.out.println(
-                "Address: " + employee.getEmergencyContact1StreetAddress() + ", " + employee.getEmergencyContact1City() + ", " + employee.getEmergencyContact1State() + " " + employee.getEmergencyContact1ZipCode()
+                "Address: " + employee.emergencyContact1StreetAddress() + ", " + employee.emergencyContact1City() + ", " + employee.emergencyContact1State() + " " + employee.emergencyContact1ZipCode()
         );
-        System.out.println("Relationship: " + employee.getEmergencyContact1Relationship());
+        System.out.println("Relationship: " + employee.emergencyContact1Relationship());
 
         System.out.println("Emergency Contact 2:");
-        System.out.println("Name: " + employee.getEmergencyContact2FirstName() + " " + employee.getEmergencyContact2LastName());
-        System.out.println("Phone Number: " + employee.getEmergencyContact2PhoneNumber());
-        System.out.println("Email: " + employee.getEmergencyContact2Email());
+        System.out.println("Name: " + employee.emergencyContact2FirstName() + " " + employee.emergencyContact2LastName());
+        System.out.println("Phone Number: " + employee.emergencyContact2PhoneNumber());
+        System.out.println("Email: " + employee.emergencyContact2Email());
         System.out.println(
-                "Address: " + employee.getEmergencyContact2StreetAddress() + ", " + employee.getEmergencyContact2City() + ", " + employee.getEmergencyContact2State() + " " + employee.getEmergencyContact2ZipCode()
+                "Address: " + employee.emergencyContact2StreetAddress() + ", " + employee.emergencyContact2City() + ", " + employee.emergencyContact2State() + " " + employee.emergencyContact2ZipCode()
         );
-        System.out.println("Relationship: " + employee.getEmergencyContact2Relationship());
+        System.out.println("Relationship: " + employee.emergencyContact2Relationship());
     }
 
     public static void main(String[] args) {
